@@ -1,12 +1,30 @@
-flowchart TD
-    A[User creates a new note] -->|Submit form| B[POST /new_note]
-    B --> C{Server Response}
-    C -->|302 Redirect| D[GET /notes]
-    D --> E[Server responds with HTML document]
-    E --> F[GET main.css]
-    F --> G[Server responds with CSS file]
-    G --> H[GET main.js]
-    H --> I[Server responds with JavaScript file]
-    I --> J[GET data.json]
-    J --> K[Server responds with updated notes JSON]
-    K --> L[Browser updates UI with the new note]
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note (note data)
+    activate server
+    server-->>browser: HTTP 302 Redirect to /notes
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: HTML document for notes page
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: main.css file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: main.js file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: [{ "content": "new note content", "date": "2023-07-20" }, ...]
+    deactivate server
+
+    Note right of browser: Browser updates the UI to show the new note
