@@ -24,7 +24,7 @@ sequenceDiagram
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>browser: [{ "content": "new note content", "date": "2023-07-20" }, ...]
+    server-->>browser: data.json
     deactivate server
 
     Note right of browser: Browser updates the UI to show the new note
