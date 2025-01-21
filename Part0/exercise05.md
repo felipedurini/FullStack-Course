@@ -21,5 +21,3 @@ sequenceDiagram
     activate server
     server-->>browser: data.json file
     deactivate server
-
-    Note right of browser: JavaScript renders the notes without reloading the page

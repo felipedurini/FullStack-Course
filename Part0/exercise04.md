@@ -27,4 +27,4 @@ sequenceDiagram
     server-->>browser: data.json
     deactivate server
 
-    Note right of browser: Browser updates the UI to show the new note
+    Note right of browser: Browser shows the new note

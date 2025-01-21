@@ -28,4 +28,4 @@ sequenceDiagram
     server-->>browser: Updated notes including the new note
     deactivate server
 
-    Note right of browser: JavaScript renders the updated notes without reloading the page
+    Note right of browser: The new note is shown without reloading the page
