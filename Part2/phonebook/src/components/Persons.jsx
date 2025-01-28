@@ -1,7 +1,12 @@
-const Persons = ({ person }) => {
-    return (
-      <li>{person.name} {person.phone}</li>
-    )
-  }
+const Persons = ({ persons }) => {
+  console.log(persons)
+  return (
+      <ul>
+          {persons.map(p => 
+              <li key={p.id}>{p.name} {p.phone}</li>
+          )}
+      </ul>
+  )
+}
   
   export default Persons

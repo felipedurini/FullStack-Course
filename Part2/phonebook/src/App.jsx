@@ -73,14 +73,16 @@ const App = () => {
 
       <h2>add a new</h2>
 
-      <PersonForm onSubmit = {addPerson} name = {newName} onChangeName = {handleNameChange} number = {newNumber} onChangeNumber = {handleNumberChange}/>
+      <PersonForm 
+        addPerson={addPerson} 
+        newName={newName} 
+        handleNameChange={handleNameChange} 
+        newNumber={newNumber} 
+        handleNumberChange={handleNumberChange} 
+      />
 
       <h2>Numbers</h2>
-      <ul>
-        {personsToShow.map(p => 
-          <Persons key={p.id} person = {p} />
-        )}
-      </ul>
+          <Persons persons = {personsToShow}/>
       </div>
   )
 }
