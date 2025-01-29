@@ -1,9 +1,10 @@
-const Persons = ({ persons }) => {
-  console.log(persons)
+const Persons = ({ persons, handler }) => {
   return (
       <ul>
           {persons.map(p => 
-              <li key={p.id}>{p.name} {p.phone}</li>
+              <li key={p.id}>{p.name} {p.number}
+              <button onClick={() => handler(p.id)}>delete</button>
+              </li>
           )}
       </ul>
   )
