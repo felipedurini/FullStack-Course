@@ -3,6 +3,8 @@
 This repository contains the first 3 parts of the https://fullstackopen.com/en/ course.
 
 seen content:
+
+
 **Part 0: Fundamentals of Web Applications**  
 - Structure of web applications  
 - HTTP protocol  
